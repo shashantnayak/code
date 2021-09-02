@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    //printf("Enter the order of matrix");
+    scanf("%d",&n);
+    
+    int matrix[n][n];
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            scanf("%d", &matrix[i][j]);
+    
+    int PrincialDiagonal=0;
+        for(int i=0;i<n;i++)
+            PrincialDiagonal = PrincialDiagonal + matrix[i][i];
+    
+    //Printf("%d\n",PrincialDiagonal);
+    
+    int SecondaryDiagonal=0;
+        for(int i=0;i<n;i++)
+            SecondaryDiagonal = SecondaryDiagonal + matrix[i][n-i-1];
+    
+    //Printf("%d\n", SecondaryDiagonal );
+    
+    int diff = PrincialDiagonal - SecondaryDiagonal;
+    //Printf("Difference = %d\n",diff);
+    
+    diff = abs(diff);
+    printf("%d",diff);
+        
+}
